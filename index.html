@@ -1,41 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Score</title>
-</head>
-<body>
-    <header>
-        <h1>
-            Top Score
-        </h1>
-    </header>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+<body class="has-background-black has-text-light"></body>
 
-    <main>
-        <div class="search-player" type="submit">
-            Search Player
-            <button type="submit"></button>
-        </div>
-
-        <div class="random-player" type="submit">
-            Random Player
-            <button type="submit"></button>
-        </div>
-
-        <div>
-            <div class="card1"></div>
-            <div class="card2"></div>
-        </div>
-
-        <div class="save-player"></div>
-
-        <div class="container">
-            
-        </div>
-
-        
-    </main>
 </body>
+    <!-- Header -->
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered is-1 has-text-white">
+        Top Scorer
+    </div>
+  </section>
+
+  <!-- Message -->
+  <article class="message has-text-centered has-background-black ">
+    <div class="message-body has-text-white">
+      This site will allow you search for your favorite player and view their stats. You can save the players to make your dream team.
+    </div>
+  </article>
+  
+ <!-- button -->
+
+ <section class="section">
+  <div class= "containter">
+    <div class ="columns">
+      <div class="column">
+        <input class="button" type="Search" value="Enter name">
+        <button class="button">Search</button>
+      </div>
+      <div class="column has-text-centered">
+
+        <button class="button">Random Player</button>
+      </div>
+      <div class="column">
+        <button class="button">Save Player</button>
+      </div>
+    </div>
+</div>
+</section>
+
+
+<!-- Tiles -->
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-variable">
+
+<div class="column is-3 boxs has-text-centered">
+  <h1 class="is-size-2 title has-text-white">Player</h1>
+  <img src="images/PICTURE.png" alt="placeholder" class="px-6">
+</div>
+
+<div class="column is-3 has-text-centered">
+  <h1 class="is-size-3 title has-text-white">Stats</h1>
+  <img src="images/download.png" alt="placeholder" class="px-6">
+</div>
+
+<div class="column is-6 has-text-centered">
+  <h1 class="is-size-3 title has-text-white">Favorite Player</h1>
+  <li>
+    Jayson Tatum
+  </li>
+</div>
+
+    </div>
+  </div>
+
+  </body>
 </html>
