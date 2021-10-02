@@ -1,6 +1,6 @@
-.bg-img
+body
 {
-    background-color: aquamarine;
+    background-image: url("bballbackground.gif")
 }
 
 
