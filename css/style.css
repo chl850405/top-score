@@ -1,6 +1,7 @@
 :root {
     --border-radius:5px;
     --primary: black;
+    --secondary: orange;
 }
 body {
     margin: 0;
@@ -60,7 +61,14 @@ body {
 
 .button:hover {
     color: var(--primary);
-    background-color:orange;
+    background-color: var(--secondary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px;
+}
+
+#search:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
     transform: translate(0, 0);
     box-shadow: 2px 2px;
 }
