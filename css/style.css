@@ -21,7 +21,7 @@ body {
 #card-front,
 #card-back {
     border-radius: var(--border-radius);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary);
     margin: auto 20px;
 }
 
@@ -33,7 +33,7 @@ body {
 #my-team {
     height: 600px;
     margin-right: 40px;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary);
     border-radius: var(--border-radius);
 }
 
