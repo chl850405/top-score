@@ -7,7 +7,9 @@ body {
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
-    background-image: url("bballbackground.gif")
+    background-image: url("../images/bballbackground.GIF");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 #search {
@@ -58,7 +60,7 @@ body {
 
 .button:hover {
     color: var(--primary);
-    background-color:gainsboro;
+    background-color:orange;
     transform: translate(0, 0);
     box-shadow: 2px 2px;
 }
