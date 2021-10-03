@@ -24,17 +24,21 @@
       </div>
     </div>
     <!-- buttons -->
-    <section id="user-input" class="column">
-        <div class ="columns">
-          <div class="field">
-          <!--why is input class button? -->
-            <input id="search" class="button is-size-5 has-text-centered has-text-black" type="text" placeholder="Enter Name">  
-            <button class="button is-size-5 has-text-black">Search</button>
+    <section id="user-input" class="section">
+        <div class ="container columns is-multiline">
+          <div class="columns is-vcentered">
+            <input id="search" class="input column is-3 is-size-4 is-offset-5 has-text-centered has-text-black" type="text" 
+            placeholder="Enter Name">
+            <button class="button is-half is-small has-text-centered has-text-black">Search</button>
           </div>
-
-          <div class="field">
-            <button class="button is-size-5 has-text-black">Random Player</button>
-            <button class="button is-size-5 has-text-black">Save Player</button>
+          <div class="column is-three-fifths is-offset-one-fifth">
+            <h1 class="column is-size-5 has-text-white">Or Pick</h1>
+          </div>
+          <div id="random-search" class="column is-three-fifths is-offset-2">
+            <button class="button column is-3 is-size-6 has-text-black">Random Player</button>
+          </div>
+          <div class="column is-one-half">
+            <button class="button column is-10 is-size-6 has-text-black">Save Player To Team</button>
           </div>
         </div>
     </section>
@@ -56,7 +60,7 @@
           </div>
 
           <div id="my-team" class="column is-half has-text-centered">
-            <h1 class="is-size-3 title has-text-white">Favorite Player</h1>
+            <h1 class="is-size-3 title has-text-white">Favorite Players</h1>
             <li class="has-text-white">
               Jayson Tatum
             </li>
@@ -64,5 +68,6 @@
         </div>
       </div>
     </section>
+  <script src="./js/script.js"></script>
   </body>
 </html>
