@@ -1,13 +1,16 @@
 :root {
     --border-radius:5px;
     --primary: black;
+    --secondary: gray;
 }
 body {
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
-    background-image: ("./images/bballbackground.gif");
+    background-image: url("../images/bballbackground.GIF");
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 #search {
@@ -18,7 +21,7 @@ body {
 #card-front,
 #card-back {
     border-radius: var(--border-radius);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary);
     margin: auto 20px;
 }
 
@@ -30,7 +33,7 @@ body {
 #my-team {
     height: 600px;
     margin-right: 40px;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary);
     border-radius: var(--border-radius);
 }
 
@@ -58,7 +61,14 @@ body {
 
 .button:hover {
     color: var(--primary);
-    background-color:gainsboro;
+    background-color: var(--secondary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px;
+}
+
+#search:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
     transform: translate(0, 0);
     box-shadow: 2px 2px;
 }
