@@ -49,3 +49,8 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
 
 getPlayerImage();
 getPlayerInfo("Qi");
+
+document.querySelector("#search-button").addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("You rang?");
+});
