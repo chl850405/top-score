@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 
 var getPlayerImage = function() {
   console.log("getPlayerImage function was called");
@@ -55,6 +53,7 @@ getPlayerInfo("Qi");
     console.log("getPlayerImage function was called");
 
 
+
 var searchedPlayerEl = document.getElementById("searchPlayer")
 
 function saveButton() {
@@ -71,4 +70,6 @@ function searchButton() {
   console.log(searchButton)
 }
 
->>>>>>> Stashed changes
+
+};
+
