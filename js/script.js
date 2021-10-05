@@ -1,3 +1,4 @@
+
 var getPlayerImage = function() {
   console.log("getPlayerImage function was called");
 };
@@ -50,5 +51,25 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
 getPlayerImage();
 getPlayerInfo("Qi");
     console.log("getPlayerImage function was called");
+
+
+
+var searchedPlayerEl = document.getElementById("searchPlayer")
+
+function saveButton() {
+  if (localStorage.saveButton) {
+    localStorage.saveButton = playerInfo(localStorage.saveButton)
+  } 
+console.log(saveButton)
+}
+
+function searchButton() {
+  var searchTerm = searchedPlayerEl.value;
+  getPlayerInfo(searchTerm)
+  localStorage.setItem('search', JSON.stringify(getPlayerInfo));
+  console.log(searchButton)
+}
+
+
 };
 
