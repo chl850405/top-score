@@ -15,27 +15,50 @@ var getPlayerInfo = function(playerName) {
   })
   // array logged in the console
   .then(response => {
-      response.json()
-          .then(function(data) {
-          console.log(data);
-          displayPlayerInfo(data, playerName);
-      });
+    return  response.json()
   })
+   .then(function(data) {
+      console.log(data);
+      displayPlayerInfo(data, playerName);
+      console.log(data[0]);
+      var responseContainerEl = document.querySelector('#card-back');
+      responseContainerEl.innerHTML = '';
+      var pInfo = document.createElement('pInfo');
+      pInfo.setAttribute('src', data[0].url);
+      responseContainerEl.appendChild(pInfo);
+
+      return data
+  })
+  // .then(function(response) {
+  //   if (response.data.length === 0) {
+  //     console.log('');
+  //   } else {
+  //   }
+  // })
   .catch(err => {
       console.error(err);
   });
-};
+}
+// another fetch call to another api
+const getPlayerPicture = (playerName) => {
+ // get the players picture based on the name or whatever the api needs to get the picture
+ fetch('toanotherapi')
+.then(res => res.json())
+.then(data => {
+  // Set the image here
+})
+}
 // var displayPlayerInfo = function(repos, searchTerm) {
 var displayPlayerInfo = function(playerInfo, searchTerm) {
-  
+
   // Array of results for player(s) - could be more than one if they have the same name
-  console.log(playerInfo); 
+  console.log(playerInfo);
 
   // Id # of player (specific to API dataset, but could be used in random())
   console.log("Player's freeNBA API Id: " + playerInfo.data[0].id);
 
   // Player's first name and last name
-  console.log("Player's first and last name: " + playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name); 
+  console.log("Player's first and last name: " + playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name);
 
   // Player's position
   console.log("Player's position abbreviation: " + playerInfo.data[0].position);
@@ -45,7 +68,7 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
 
   // Player's conference and division
   console.log("Player's conference and division: " + playerInfo.data[0].team.conference + " Conference, " + playerInfo.data[0].team.division + " Division");
-  
+
 };
 
 getPlayerImage();
@@ -59,7 +82,7 @@ var searchedPlayerEl = document.getElementById("searchPlayer")
 function saveButton() {
   if (localStorage.saveButton) {
     localStorage.saveButton = playerInfo(localStorage.saveButton)
-  } 
+  }
 console.log(saveButton)
 }
 
@@ -69,5 +92,3 @@ function searchButton() {
   localStorage.setItem('search', JSON.stringify(getPlayerInfo));
   console.log(searchButton)
 }
-
-
