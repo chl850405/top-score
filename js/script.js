@@ -1,3 +1,4 @@
+
 var getPlayerImage = function() {
   console.log("getPlayerImage function was called");
 };
@@ -68,4 +69,3 @@ function searchButton() {
   localStorage.setItem('search', JSON.stringify(getPlayerInfo));
   console.log(searchButton)
 }
-
