@@ -7,6 +7,9 @@ The website was develop using:
 1. HTML
 2. JAVASCRIPT
 3. CSS
+4. BULMA
+5. JSON
+6. RAPID.API
 
 
 Links:
