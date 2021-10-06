@@ -9,72 +9,74 @@
 
   </head>
   <body>
-    
+  
     <!-- Header -->
     <header>
-      <h1 id="title" class="title has-text-centered is-1 has-text-black">
-        Top Scorer
+      <h1 id="title" class="title has-text-centered is-1 has-text-white">
+        Top Score
       </h1>  
     </header>  
-  
-  <main class="flex-column"></main>
-
-  <!-- Message -->
-  <article class="message has-text-centered has-background-black ">
-    <div class="message-body has-text-white">
-      This site will allow you search for your favorite player and view their stats. You can save the players to make your dream team.
-    </div>
-  </article>
-  
- <!-- buttons -->
- <section id="user-input" class="section">
-  <div class= "containter">
-    <div class ="columns">
-      <div class="column is half">
-        <!--why is input class button? -->
-        <input id="search-textarea" class="button" type="Search" 
-        placeholder="Enter name">
-        <button id="search-button" class="button">Search</button>
-      </div>
-
-      <div class="column has-text-centered">
-        <button class="button">Random Player</button>
-      <!-- </div>
-      <div class="column"> -->
-        <button class="button">Save Player</button>
+    <!-- Message -->
+    <div class="has-text-centered">
+      <div class="message-dark has-text-white ">
+        Search for your favorite players and 
+        view their stats, then save the players to build your dream team.
       </div>
     </div>
-  </div>
-</section>
+    <!-- buttons -->
+    <section id="user-input" class="section">
+        <div class ="container columns is-multiline">
+          <div class="columns is-vcentered">
+            <input id="search" class="input column is-3 is-size-4 is-offset-5 has-text-centered has-text-black" type="text" 
+            placeholder="Enter Player's Name">
+            <button class="button is-half is-small has-text-centered has-text-black" id="search-button">Search</button>
+          </div>
+          <div class="column is-three-fifths is-offset-one-fifth">
+            <h1 class="column is-size-5 has-text-white">Or Pick</h1>
+          </div>
+          <div id="random-search" class="column is-three-fifths is-offset-2">
+            <button class="button column is-3 is-size-6 has-text-black">Random Player</button>
+          </div>
+          <div class="column is-one-half">
+            <button class="button column is-10 is-size-6 has-text-black">Save Player To Team</button>
+          </div>
+        </div>
+    </section>
+    <!-- Players/Player Stats -->
+    <section id="team-player" class="section">
+      <div class="container">
+        <div class="columns is-variable">
 
-
-<!-- Players/Player Stats -->
-
-<section id="team-player" class="section">
-  <div class="container">
-    <div class="columns is-variable">
-
-<div id="card-front" class="column is-auto has-text-centered">
-  <h1 class="is-size-2 title has-text-white">Player</h1>
-  <img src="images/PICTURE.png" alt="placeholder" class="px-6">
-</div>
-
-<div id="card-back" class="column is-auto has-text-centered">
-  <h1 class="is-size-3 title has-text-white">Stats</h1>
-  <img src="images/download.png" alt="placeholder" class="px-6">
-</div>
-
-<div id="my-team" class="column is-half has-text-centered">
-  <h1 class="is-size-3 title has-text-black">Favorite Player</h1>
-  <li>
-    Jayson Tatum
-  </li>
-</div>
-
-    </div>
-  </div>
-  </section>
-</main>
+          <div id="card-front" class="column is-auto has-text-centered">
+            <h1 class="is-size-3 title has-text-white has-background-grey-dark">Player</h1>
+            <img src="images/PICTURE.png" alt="placeholder">
+          </div>
+          <div id="card-back" class="column is-auto has-text-centered">
+            <h1 class="is-size-3 title has-text-white has-background-grey-dark">Info</h1>
+            <!-- <img src="images/download.png" alt="placeholder"> -->
+            
+            <h4 class="is-size-5 title has-text-white has-background-grey-dark">Full Name</h4>
+            <div class="player-info" id="full-name"></div>
+            
+            <h4 class="is-size-5 title has-text-white has-background-grey-dark">Team</h4>
+            <div class="player-info" id="team-name"></div>
+            
+            <h4 class="is-size-5 title has-text-white has-background-grey-dark">Position</h4>
+            <div class="player-info" id="player-position"></div>
+            
+            <h4 class="is-size-5 title has-text-white has-background-grey-dark">Conference / Division</h4>          
+            <div class="player-info" id="conference-division"></div>
+            
+          </div>
+          <div id="my-team" class="column is-half has-text-centered">
+            <h1 class="is-size-3 title has-text-white has-background-grey-dark">Favorite Players</h1>
+            <li class="content is-large has-text-white" type="1">
+              Jayson Tatum
+            </li>
+          </div>
+        </div>
+      </div>
+    </section>
   <script src="./js/script.js"></script>
   </body>
 </html>

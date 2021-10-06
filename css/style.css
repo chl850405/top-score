@@ -1,13 +1,34 @@
 :root {
     --border-radius:5px;
     --primary: black;
+    --secondary: gray;
+    --tertiary: bisque;
 }
 body {
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
-    background-image: ("./images/bballbackground.gif");
+    background-image: url("../images/bballbackground.GIF");
+    background-size: cover;  /* changed \/ to "cover" from 100% to make it resizeable/responsive */
+    background-repeat: no-repeat;
+}
+
+h1 {
+    padding: 10px;
+}
+
+h4 {
+    margin: 10px 0;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.player-info {
+    height: 15px;
+    line-height: 1;
+    font-size: 1.25rem;
+    color: var(--primary);
 }
 
 #search {
@@ -17,20 +38,17 @@ body {
 
 #card-front,
 #card-back {
+    background-color: var(--tertiary);  /* added bisque color to card front/back */
     border-radius: var(--border-radius);
-    border: 2px solid var(--primary);
-    margin: auto 20px;
-}
-
-#card-front,
-#card-back {
+    border: 2px solid var(--secondary);
+    margin: auto 20px;  
     height: 400px;
 }
 
 #my-team {
     height: 600px;
     margin-right: 40px;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--secondary);
     border-radius: var(--border-radius);
 }
 
@@ -39,7 +57,7 @@ body {
     flex-wrap: wrap;
 }
 
-#search {
+#searchPlayer{
     width: 100%;
     height: 29%;
     border-radius: var(--border-radius);
@@ -58,7 +76,14 @@ body {
 
 .button:hover {
     color: var(--primary);
-    background-color:gainsboro;
+    background-color: var(--secondary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px;
+}
+
+#search-button:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
     transform: translate(0, 0);
     box-shadow: 2px 2px;
 }
