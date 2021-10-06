@@ -5,6 +5,8 @@ var playerNameEl = document.querySelector("#full-name");
 var teamNameEl = document.querySelector("#team-name");
 var playerPositionEl = document.querySelector("#player-position");
 var conferenceDivisionEl = document.querySelector("#conference-division");
+var myTeamEl = document.querySelector("#my-team");
+var saveButtonEl = document.querySelector("#save-button");
 
 
 var formSubmitHandler = function(event) {
@@ -27,16 +29,10 @@ var formSubmitHandler = function(event) {
         //createPlayerButtons(searchPlayer);
     
     } else {
-        alert("Please enter a valid city name.");
+        alert("Please enter a valid player name.");
     }
     console.log(event);
 }
-
-
-var createPlayerButtons = function() {
-    console.log("you called the createPlayerButtons function");
-}
-
 
 // API fetch to freeNBA API
 var getPlayerInfo = function(playerName) {
@@ -79,7 +75,8 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
 
     // Player's first name and last name
     console.log("Player's first and last name: " + playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name); 
-    playerNameEl.textContent = playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name;
+    var playerFullName = playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name;
+    playerNameEl.textContent = playerFullName;
 
     // Player's full team name
     console.log("Player's full team name: " + playerInfo.data[0].team.full_name);
@@ -92,13 +89,34 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
     // Player's conference and division
     console.log("Player's conference and division: " + playerInfo.data[0].team.conference + " Conference, " + playerInfo.data[0].team.division + " Division");
     conferenceDivisionEl.textContent = playerInfo.data[0].team.conference + " / " + playerInfo.data[0].team.division;
+
 };
 
+var createPlayerButtons = function() {
+    var playerFullName = document.getElementById("full-name").textContent;
+    if(playerFullName) {
+        console.log(playerFullName);
+        var playerButtonEl = document.createElement("button");
+        playerButtonEl.className = "button";
+        playerButtonEl.textContent = playerFullName;
+        playerButtonEl.style.background = "grey";
+        playerButtonEl.style.margin = "15px 0 15px 0";
+        playerButtonEl.style.border = "2px solid white";
+        playerButtonEl.style.color = "white";
+        playerButtonEl.style.fontWeight = "bold";
+        playerButtonEl.style.fontSize = "1.5rem";
+    } else {
+        alert("Please enter a valid player name, click search, and then optionally save.")
+    }
+    myTeamEl.appendChild(playerButtonEl);
+}
 
 getPlayerImage();
 //getPlayerInfo("Qi");
 
 searchButtonEl.addEventListener("click", formSubmitHandler); 
+
+saveButtonEl.addEventListener("click", createPlayerButtons);
 
 
 
