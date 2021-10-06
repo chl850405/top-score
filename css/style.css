@@ -10,7 +10,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
     background-image: url("../images/bballbackground.GIF");
-    background-size: cover;  /* changed \/ to "cover" from 100% to make it resizeable/responsive */
+    background-size: cover;  /* changed to "cover" from 100% to make it resizeable/responsive */
     background-repeat: no-repeat;
 }
 

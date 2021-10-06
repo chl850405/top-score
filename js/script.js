@@ -7,7 +7,7 @@ var playerPositionEl = document.querySelector("#player-position");
 var conferenceDivisionEl = document.querySelector("#conference-division");
 var myTeamEl = document.querySelector("#my-team");
 var saveButtonEl = document.querySelector("#save-button");
-
+var randomButtonEl = document.querySelector("#random-button");
 
 var formSubmitHandler = function(event) {
     // prevent page from refreshing
@@ -111,12 +111,20 @@ var createPlayerButtons = function() {
     myTeamEl.appendChild(playerButtonEl);
 }
 
+var randomNumber = function() {
+    value = Math.floor(Math.random();
+    console.log(value);
+    getPlayerInfo(value);
+}
+
 getPlayerImage();
 //getPlayerInfo("Qi");
 
 searchButtonEl.addEventListener("click", formSubmitHandler); 
 
 saveButtonEl.addEventListener("click", createPlayerButtons);
+
+randomButtonEl.addEventListener("click", chooseRandomPlayer);
 
 
 
