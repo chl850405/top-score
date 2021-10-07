@@ -4,14 +4,12 @@
     --secondary: gray;
     --tertiary: bisque;
 }
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
-    background-image: url("../images/bballbackground.GIF");
-    background-size: cover;  /* changed to "cover" from 100% to make it resizeable/responsive */
-    background-repeat: no-repeat;
 }
 
 h1 {
@@ -29,6 +27,8 @@ h4 {
     line-height: 1;
     font-size: 1.25rem;
     color: var(--primary);
+    background-size: 100%; 
+    background-repeat: no-repeat;
 }
 
 #search {
@@ -41,7 +41,7 @@ h4 {
     background-color: var(--tertiary);  /* added bisque color to card front/back */
     border-radius: var(--border-radius);
     border: 2px solid var(--secondary);
-    margin: auto 20px;  
+    margin: auto 20px;
     height: 400px;
 }
 
@@ -49,8 +49,7 @@ h4 {
     height: 600px;
     margin-right: 40px;
     border: 2px solid var(--secondary);
-    border-radius: var(--border-radius);
-        
+    border-radius: var(--border-radius);        
 }
 
 .flex-column {
@@ -83,6 +82,13 @@ h4 {
 }
 
 #search-button:hover {
+    color: var(--primary);
+    background-color: var(--secondary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px;
+}
+
+#search:hover {
     color: var(--primary);
     background-color: var(--secondary);
     transform: translate(0, 0);
