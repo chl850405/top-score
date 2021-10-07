@@ -44,7 +44,9 @@ h4 {
     margin: auto 20px;
     height: 400px;
 }
-
+#image{
+    text-align: center;
+}
 #my-team {
     height: 600px;
     margin-right: 40px;

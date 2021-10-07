@@ -20,6 +20,7 @@ var formSubmitHandler = function(event) {
     if(searchPlayer) {
         console.log("inside if");
         getPlayerInfo(searchPlayer);
+        getPlayerImage(searchPlayer);
 
         // clear old content from input field
         playerInputFieldEl.value = "";
@@ -35,8 +36,8 @@ var formSubmitHandler = function(event) {
 }
 
 
-// API fetch to freeNBA API
-var getPlayerInfo = function(playerName) {
+//API fetch to freeNBA API
+  var getPlayerInfo = function(playerName) {
   console.log("getPlayerInfo function was called");
 
   fetch("https://free-nba.p.rapidapi.com/players/?search=" + playerName, {
@@ -53,17 +54,46 @@ var getPlayerInfo = function(playerName) {
           console.log(data);
           displayPlayerInfo(data, playerName);
       });
-  })
+ })
   .catch(err => {
       console.error(err);
   });
 };
 
 
-// Function stub
-var getPlayerImage = function() {
+//getPlayerimage
+var getPlayerImage = function(playerName) {
     console.log("getPlayerImage function was called");
+
+fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=" + playerName + "&count=1", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
+		"x-rapidapi-key": "f5473a8174msh28e65885231f9c9p10dbb4jsnb8d34c7c50ba"
+	}
+})
+.then(function(response) {
+  return response.json();
+})
+.then(function(response) {
+  console.log(response.value[0].contentUrl);
+
+  var playerImage = response.value[0].contentUrl
+
+  // Create a variable that will select the <div> where the GIF will be displayed
+  var responseContainerEl = document.querySelector('#card-front');
+
+  // Empty out the <div> before we append a GIF to it
+  responseContainerEl.innerHTML = '';
+
+  var gifImg = document.createElement('img');
+  gifImg.setAttribute('src', playerImage);
+
+  // Append 'gifImg' to the <div>
+  responseContainerEl.appendChild(gifImg);
+});
 };
+
 
 // var displayPlayerInfo = function(repos, searchTerm) {
 var displayPlayerInfo = function(playerInfo, searchTerm) {
