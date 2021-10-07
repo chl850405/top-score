@@ -60,10 +60,40 @@ var getPlayerInfo = function(playerName) {
 };
 
 
-// Function stub
-var getPlayerImage = function() {
+//GetplayerImage
+
+var getPlayerImage = function(playerName) {
     console.log("getPlayerImage function was called");
+
+fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=" + playerName + "&count=1", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "bing-image-search1.p.rapidapi.com",
+		"x-rapidapi-key": "f5473a8174msh28e65885231f9c9p10dbb4jsnb8d34c7c50ba"
+	}
+})
+.then(function(response) {
+  return response.json();
+})
+.then(function(response) {
+  console.log(response.value[0].contentUrl);
+
+  var playerImage = response.value[0].contentUrl
+
+  // Create a variable that will select the <div> where the GIF will be displayed
+  var responseContainerEl = document.querySelector('#card-front');
+
+  // Empty out the <div> before we append a GIF to it
+  responseContainerEl.innerHTML = '';
+
+  var gifImg = document.createElement('img');
+  gifImg.setAttribute('src', playerImage);
+
+  // Append 'gifImg' to the <div>
+  responseContainerEl.appendChild(gifImg);
+});
 };
+
 
 // var displayPlayerInfo = function(repos, searchTerm) {
 var displayPlayerInfo = function(playerInfo, searchTerm) {
@@ -137,8 +167,6 @@ searchButtonEl.addEventListener("click", formSubmitHandler);
 saveButtonEl.addEventListener("click", createPlayerButtons);
 
 //randomButtonEl.addEventListener("click", chooseRandomPlayer);
-
-
 
 
 // var searchedPlayerEl = document.getElementById("searchPlayer")
