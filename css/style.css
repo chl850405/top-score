@@ -1,15 +1,33 @@
 :root {
     --border-radius:5px;
     --primary: black;
-    --secondary: gray;
+    --secondary: rgb(105, 105, 105);
+    --tertiary: bisque;
 }
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
-    background-image: url("../images/bballbackground.GIF");
-    background-size: 100%;
+}
+
+h1 {
+    padding: 10px;
+}
+
+h4 {
+    margin: 10px 0;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.player-info {
+    height: 15px;
+    line-height: 1;
+    font-size: 1.25rem;
+    color: var(--primary);
+    background-size: 100%; 
     background-repeat: no-repeat;
 }
 
@@ -20,21 +38,21 @@ body {
 
 #card-front,
 #card-back {
+    background-color: var(--tertiary);  /* added bisque color to card front/back */
     border-radius: var(--border-radius);
     border: 2px solid var(--secondary);
     margin: auto 20px;
-}
-
-#card-front,
-#card-back {
     height: 400px;
 }
-
+#image{
+    text-align: center;
+}
 #my-team {
     height: 600px;
     margin-right: 40px;
     border: 2px solid var(--secondary);
     border-radius: var(--border-radius);
+    background-color: var(--tertiary);        
 }
 
 .flex-column {
@@ -66,9 +84,16 @@ body {
     box-shadow: 2px 2px;
 }
 
-#search:hover {
+#search-button:hover {
     color: var(--primary);
     background-color: var(--secondary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px;
+}
+
+#search:hover {
+    color: var(--primary);
+    border-color: var(--secondary);
     transform: translate(0, 0);
     box-shadow: 2px 2px;
 }
