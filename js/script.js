@@ -58,6 +58,7 @@ var formSubmitHandler = function(event) {
   .catch(err => {
       console.error(err);
   });
+
 };
 
 
@@ -97,9 +98,9 @@ fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=" + playerName 
 
 // var displayPlayerInfo = function(repos, searchTerm) {
 var displayPlayerInfo = function(playerInfo, searchTerm) {
-  
+
   // Array of results for player(s) - could be more than one if they have the same name
-  console.log(playerInfo); 
+  console.log(playerInfo);
 
   // Id # of player (specific to API dataset, but could be used in random())
   console.log("Player's freeNBA API Id: " + playerInfo.data[0].id);
@@ -122,7 +123,7 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
     conferenceDivisionEl.textContent = playerInfo.data[0].team.conference + " / " + playerInfo.data[0].team.division;
 
   // Player's first name and last name
-  console.log("Player's first and last name: " + playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name); 
+  console.log("Player's first and last name: " + playerInfo.data[0].first_name + " " + playerInfo.data[0].last_name);
 
   // Player's position
   console.log("Player's position abbreviation: " + playerInfo.data[0].position);
@@ -132,7 +133,7 @@ var displayPlayerInfo = function(playerInfo, searchTerm) {
 
   // Player's conference and division
   console.log("Player's conference and division: " + playerInfo.data[0].team.conference + " Conference, " + playerInfo.data[0].team.division + " Division");
-  
+
 };
 
 var createPlayerButtons = function() {
@@ -169,16 +170,14 @@ saveButtonEl.addEventListener("click", createPlayerButtons);
 //randomButtonEl.addEventListener("click", chooseRandomPlayer);
 
 
-
-
 // var searchedPlayerEl = document.getElementById("searchPlayer")
 
-// function saveButton() {
-//   if (localStorage.saveButton) {
-//     localStorage.saveButton = playerInfo(localStorage.saveButton)
-//   } 
-// console.log(saveButton)
-// }
+function saveButton() {
+   if (localStorage.saveButton) {
+     localStorage.saveButton = playerInfo(localStorage.saveButton)
+   } 
+ console.log(saveButton)
+ }
 
 // function searchButton() {
 //   var searchTerm = searchedPlayerEl.value;
@@ -192,7 +191,7 @@ var searchedPlayerEl = document.getElementById("searchPlayer")
 function saveButton() {
   if (localStorage.saveButton) {
     localStorage.saveButton = playerInfo(localStorage.saveButton)
-  } 
+  }
 console.log(saveButton)
 }
 
